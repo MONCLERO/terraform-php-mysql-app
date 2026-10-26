@@ -1,0 +1,15 @@
+# Local working files - Provider plugins
+.terraform/
+
+# Terraform state files containing sensitive data
+*.tfstate
+*.tfstate.*
+
+# Variable files with real values or secrets
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+
+# Key pairs for ssh access
+*.pem
+*.key
