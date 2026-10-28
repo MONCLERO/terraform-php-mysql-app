@@ -12,7 +12,8 @@ sudo apt-get install mysql-server -y
 
 # ------ PORTS SETUP ----- #
 
-sudo sed -i 's/^bind-address.*/bind-address = ${app_host}/' /etc/mysql/mysql.conf.d/mysqld.cnf
+DB_IP=$(hostname -I | '{print $1')
+sudo sed -i "s/^bind-address.*/bind-address = $DB_IP/" /etc/mysql/mysql.conf.d/mysqld.cnf
 
 # ----- DEPLOY NEW CONFIG ----- #
 

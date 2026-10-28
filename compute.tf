@@ -48,7 +48,6 @@ resource "aws_instance" "app" {
   depends_on             = [aws_nat_gateway.nat]
 
   user_data = templatefile("${path.module}/scripts/app_server_setup.sh", {
-    app_host = aws_instance.app.private_ip
     db_host     = aws_instance.db.private_ip
     db_password = var.db_password
   })
